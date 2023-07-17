@@ -247,7 +247,9 @@ const TagContent = () => {
                   )}
                 </div>
                 <div className={styles.formFieldInline}>
-                  <a href="/">Click here to know about competencies</a>
+                  <a href="http://20.219.197.218/explore/" target="_blank">
+                    Click here to know about competencies
+                  </a>
                 </div>
               </div>
               <div className={styles.formbutton}>
