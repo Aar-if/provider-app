@@ -40,7 +40,7 @@ const TagContent = () => {
   };
 
   return (
-    <>
+    <div className={styles.body}>
       <div>
         <Header />
       </div>
@@ -140,6 +140,43 @@ const TagContent = () => {
               </div>
               <div className={styles.formFieldDiv}>
                 <div>
+                  <label className={styles.formLabel} htmlFor="contentLink">
+                    Link to content
+                  </label>
+                </div>
+                <div className={styles.formFieldInput}>
+                  <input
+                    type="text"
+                    name="contentLink"
+                    id="contentLink"
+                    placeholder="Link to the content"
+                    {...register("contentLink")}
+                  ></input>
+                  {errors.contentLink && <p>{errors.contentLink.message}</p>}
+                </div>
+              </div>
+
+              <div className={styles.formFieldDiv}>
+                <div>
+                  <label
+                    className={styles.formLabel}
+                    htmlFor="contentDescription"
+                  >
+                    Description
+                  </label>
+                </div>
+                <div className={styles.formFieldInput}>
+                  <textarea
+                    placeholder="Description"
+                    name="contentDescription"
+                    id="contentDescription"
+                    {...register("description")}
+                  ></textarea>
+                  {errors.description && <p>{errors.description.message}</p>}
+                </div>
+              </div>
+              <div className={styles.formFieldDiv}>
+                <div>
                   <label className={styles.formLabel} htmlFor="contentDomain">
                     Domain
                   </label>
@@ -225,43 +262,6 @@ const TagContent = () => {
                 </div>
               </div> */}
 
-              <div className={styles.formFieldDiv}>
-                <div>
-                  <label className={styles.formLabel} htmlFor="contentLink">
-                    Link to content
-                  </label>
-                </div>
-                <div className={styles.formFieldInput}>
-                  <input
-                    type="text"
-                    name="contentLink"
-                    id="contentLink"
-                    placeholder="Link to the content"
-                    {...register("contentLink")}
-                  ></input>
-                  {errors.contentLink && <p>{errors.contentLink.message}</p>}
-                </div>
-              </div>
-
-              <div className={styles.formFieldDiv}>
-                <div>
-                  <label
-                    className={styles.formLabel}
-                    htmlFor="contentDescription"
-                  >
-                    Description
-                  </label>
-                </div>
-                <div className={styles.formFieldInput}>
-                  <textarea
-                    placeholder="Description"
-                    name="contentDescription"
-                    id="contentDescription"
-                    {...register("description")}
-                  ></textarea>
-                  {errors.description && <p>{errors.description.message}</p>}
-                </div>
-              </div>
               <div className={styles.footerheading}>
                 <h3>Competencies</h3>
               </div>
@@ -367,7 +367,7 @@ const TagContent = () => {
           </form>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
