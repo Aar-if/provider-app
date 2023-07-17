@@ -4,7 +4,9 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import RegisterSchema from "../schema/RegisterSchema";
 import uploadApi from "../api/uploadapi";
 import { useEffect } from "react";
+import Header from "../components/Header";
 import axios from "axios";
+
 const TagContent = () => {
   useEffect(() => {
     axios({
@@ -31,7 +33,7 @@ const TagContent = () => {
     const result = await uploadApi(data);
 
     if (result == true) {
-      alert("Registration Successful.");
+      alert("Content added successfully.");
     } else {
       alert("Registeration failed");
     }
@@ -39,6 +41,9 @@ const TagContent = () => {
 
   return (
     <>
+      <div>
+        <Header />
+      </div>
       <div className={styles.outerdiv}>
         <h1>Tag Content</h1>
       </div>
@@ -46,11 +51,13 @@ const TagContent = () => {
         <div className={styles.tagContentForm}>
           <form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
             <div>
-              <div className={styles.formHeading}>
-                <h3>Tag your content</h3>
-              </div>
-
               <div className={styles.formFieldDiv}>
+                <div>
+                  <label className={styles.formLabel} htmlFor="contentName">
+                    {" "}
+                    Content Name
+                  </label>
+                </div>
                 <div className={styles.formFieldInput}>
                   <input
                     type="text"
@@ -64,13 +71,18 @@ const TagContent = () => {
               </div>
 
               <div className={styles.formFieldDiv}>
+                <div>
+                  <label className={styles.formLabel} htmlFor="language">
+                    Language
+                  </label>
+                </div>
                 <div className={styles.formFieldInput}>
                   <select
                     name="language"
                     id="language"
                     {...register("language")}
                   >
-                    <option value="">Language</option>
+                    <option value="">Select a Language</option>
                     <option value="English">English</option>
                     <option value="Hindi">Hindi</option>
                     <option value="Gujarati">Gujarati</option>
@@ -84,9 +96,14 @@ const TagContent = () => {
               </div>
 
               <div className={styles.formFieldDiv}>
+                <div>
+                  <label className={styles.formLabel} htmlFor="theme">
+                    Theme
+                  </label>
+                </div>
                 <div className={styles.formFieldInput}>
                   <select name="theme" id="theme" {...register("theme")}>
-                    <option value="">Theme</option>
+                    <option value="">Select a Theme</option>
                     <option value="Animals">Animals</option>
                     <option value="Birds">Birds</option>
                     <option value="Vegetables">Vegetables</option>
@@ -100,6 +117,11 @@ const TagContent = () => {
               </div>
 
               <div className={styles.formFieldDiv}>
+                <div>
+                  <label className={styles.formLabel} htmlFor="contentType">
+                    Type
+                  </label>
+                </div>
                 <div className={styles.formFieldInput}>
                   <select
                     name="contentType"
@@ -117,13 +139,18 @@ const TagContent = () => {
                 </div>
               </div>
               <div className={styles.formFieldDiv}>
+                <div>
+                  <label className={styles.formLabel} htmlFor="contentDomain">
+                    Domain
+                  </label>
+                </div>
                 <div className={styles.formFieldInput}>
                   <select
-                    name="contentType"
-                    id="contentType"
-                    {...register("contentType")}
+                    name="contentDomain"
+                    id="contentDomain"
+                    {...register("contentDomain")}
                   >
-                    <option value="">Domain</option>
+                    <option value="">Choose a Domain</option>
                     <option value="Socio-Emotional and Ethical Development">
                       Socio-Emotional and Ethical Development
                     </option>
@@ -144,23 +171,41 @@ const TagContent = () => {
                 </div>
               </div>
               <div className={styles.formFieldDiv}>
+                <div>
+                  <label className={styles.formLabel} htmlFor="contentGoal">
+                    {" "}
+                    Curricular Goals
+                  </label>
+                </div>
                 <div className={styles.formFieldInput}>
                   <select
-                    name="contentType"
-                    id="contentType"
-                    {...register("contentType")}
+                    name="contentGoal"
+                    id="contentGoal"
+                    {...register("contentGoal")}
                   >
-                    <option value="">Goal</option>
-                    <option value="Children develop emotional intelligence">
-                      Children develop emotional intelligence
+                    <option value="">Select a Curricular Goal</option>
+                    <option value="CG-2: Children develop sharpness in sensorial perceptions">
+                      CG-2: Children develop sharpness in sensorial perceptions
                     </option>
-                    <option value="Children develop a positive attitude towards productive work and service or ‘Seva’">
-                      Children develop a positive attitude towards productive
-                      work and service or ‘Seva’
+                    <option value="CG-1: Children develop habits that keep them healthy and safe">
+                      CG-1: Children develop habits that keep them healthy and
+                      safe
                     </option>
-                    <option value="Children make sense of world around through observation and logical thinking">
-                      Children make sense of world around through observation
-                      and logical thinking
+                    <option value="CG-4: Children develop emotional intelligence">
+                      CG-4: Children develop emotional intelligence
+                    </option>
+                    <option value="CG-7: Children make sense of world around through observation and logical thinking">
+                      CG-7: Children make sense of world around through
+                      observation and logical thinking
+                    </option>
+                    <option value="CG-9: Children develop effective communication skills for day-to-day interactions in two languages">
+                      CG-9: Children develop effective communication skills for
+                      day-to-day interactions in two languages
+                    </option>
+                    <option value="CG-12: Children develop abilities and sensibilities in visual and performing arts, and express their emotions through art in meaningful and joyful ways">
+                      CG-12: Children develop abilities and sensibilities in
+                      visual and performing arts, and express their emotions
+                      through art in meaningful and joyful ways
                     </option>
                   </select>
                   {errors.contentType && <p>{errors.contentType.message}</p>}
@@ -181,6 +226,11 @@ const TagContent = () => {
               </div> */}
 
               <div className={styles.formFieldDiv}>
+                <div>
+                  <label className={styles.formLabel} htmlFor="contentLink">
+                    Link to content
+                  </label>
+                </div>
                 <div className={styles.formFieldInput}>
                   <input
                     type="text"
@@ -194,6 +244,14 @@ const TagContent = () => {
               </div>
 
               <div className={styles.formFieldDiv}>
+                <div>
+                  <label
+                    className={styles.formLabel}
+                    htmlFor="contentDescription"
+                  >
+                    Description
+                  </label>
+                </div>
                 <div className={styles.formFieldInput}>
                   <textarea
                     placeholder="Description"
@@ -219,27 +277,72 @@ const TagContent = () => {
                     }}
                   >
                     <option value=""></option>
-                    <option value="Starts recognising ‘self’ as an individual belonging to a family and community">
-                      Starts recognising ‘self’ as an individual belonging to a
-                      family and community
+                    <option value="C-2.2: Develops visual memory for symbols and representations">
+                      C-2.2: Develops visual memory for symbols and
+                      representations
                     </option>
-                    <option value="Recognises different emotions and makes deliberate effort to regulate them appropriately">
-                      Recognises different emotions and makes deliberate effort
-                      to regulate them appropriately
+                    <option value="C-2.3: Differentiates sounds by their pitch, volume and sound patterns by their pitch, volume, and tempo">
+                      C-2.3: Differentiates sounds by their pitch, volume and
+                      sound patterns by their pitch, volume, and tempo
                     </option>
-                    <option value="Interacts comfortably with other children and adults">
-                      Interacts comfortably with other children and adults
+                    <option value="C-2.1: Differentiates between shapes, colours, and their shades">
+                      C-2.1: Differentiates between shapes, colours, and their
+                      shades
                     </option>
-                    <option value="Understands and responds positively to social norms in the classroom and school">
-                      Understands and responds positively to social norms in the
-                      classroom and school
+                    <option value="C-1.2: Practices basic self-care and hygiene">
+                      C-1.2: Practices basic self-care and hygiene
                     </option>
-                    <option value="Shows cooperative behaviour with other children">
-                      Shows cooperative behaviour with other children
+                    <option value="C-1.1: Shows a liking for and understanding of nutritious food and does not waste food">
+                      C-1.1: Shows a liking for and understanding of nutritious
+                      food and does not waste food
                     </option>
-                    <option value="Shows kindness and helpfulness to others (including animals, plants) when they are in need">
-                      Shows kindness and helpfulness to others (including
-                      animals, plants) when they are in need
+                    <option value="C-1.3: Keeps school/classroom hygienic and organised">
+                      C-1.3: Keeps school/classroom hygienic and organised
+                    </option>
+                    <option value="C-3.3: Shows precision and control in working with their hands and fingers">
+                      C-3.3: Shows precision and control in working with their
+                      hands and fingers
+                    </option>
+                    <option value="C-3.2: Shows balance, coordination and flexibility in various physical activities">
+                      C-3.2: Shows balance, coordination and flexibility in
+                      various physical activities
+                    </option>
+                    <option value="C-3.1: Shows coordination between sensorial perceptions and body movements in various activities">
+                      C-3.1: Shows coordination between sensorial perceptions
+                      and body movements in various activities
+                    </option>
+                    <option value="C-4.2: Recognises different emotions and makes deliberate effort to regulate them appropriately">
+                      C-4.2: Recognises different emotions and makes deliberate
+                      effort to regulate them appropriately
+                    </option>
+                    <option value="C-4.1: Starts recognising 'self' as an individual belonging to a family and community">
+                      C-4.1: Starts recognising 'self' as an individual
+                      belonging to a family and community
+                    </option>
+                    <option value="C-7.2: Observes and understands cause and effect relationships in nature by forming simple hypothesis and uses observations to explain their hypothesis">
+                      C-7.2: Observes and understands cause and effect
+                      relationships in nature by forming simple hypothesis and
+                      uses observations to explain their hypothesis
+                    </option>
+                    <option value="C-7.1: Observes and understands different categories of objects and relationships between them">
+                      C-7.1: Observes and understands different categories of
+                      objects and relationships between them
+                    </option>
+                    <option value="C-9.2: Creates simple songs and poems on their own">
+                      C-9.2: Creates simple songs and poems on their own
+                    </option>
+                    <option value="C-9.1: Listens to and appreciates simple songs, rhymes, and poems">
+                      C-9.1: Listens to and appreciates simple songs, rhymes,
+                      and poems
+                    </option>
+                    <option value="C-9.1: Listens to and appreciates simple songs, rhymes, and poems">
+                      C-9.1: Listens to and appreciates simple songs, rhymes,
+                      and poems
+                    </option>
+                    <option value="C-12.1: Explores and plays with a variety of materials and tools to create two-dimensional and three-dimensional artworks in varying sizes">
+                      C-12.1: Explores and plays with a variety of materials and
+                      tools to create two-dimensional and three-dimensional
+                      artworks in varying sizes
                     </option>
                   </select>
                   {errors.compentencies && (

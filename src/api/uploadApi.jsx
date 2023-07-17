@@ -12,6 +12,8 @@ const uploadApi = async (data) => {
   const contentLink = data.contentLink;
   const description = data.description;
   const competency = data.compentencies;
+  const domain = data.contentDomain;
+  const goal = data.contentGoal;
 
   let result = true;
   await axios
@@ -24,10 +26,10 @@ const uploadApi = async (data) => {
         language: language,
         link: contentLink,
         contentType: contentType,
-        domain: "abc",
-        goal: "abc",
+        domain: domain,
+        goal: goal,
         competency: competency,
-        theme: theme,
+        themes: theme,
       }
     )
     .then((res) => {

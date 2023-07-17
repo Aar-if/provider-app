@@ -92,3 +92,6 @@ textarea {
 
   border-radius: 5px;
 }
+.formLabel {
+  font-size: larger;
+}
