@@ -2,7 +2,7 @@ import styles from "../styles/tagContent.module.css";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import RegisterSchema from "../schema/RegisterSchema";
-import uploadApi from "../api/uploadapi";
+import uploadApi from "../api/uploadApi";
 import { useEffect } from "react";
 import Header from "../components/Header";
 import axios from "axios";
