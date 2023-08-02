@@ -18,18 +18,20 @@ const uploadApi = async (data) => {
   let result = true;
   await axios
     .post(
-      "https://onest-strapi.tekdinext.com/fln-contents",
+      "https://onest-strapi.tekdinext.com/api/fln-contents",
 
       {
-        title: title,
-        description: description,
-        language: language,
-        link: contentLink,
-        contentType: contentType,
-        domain: domain,
-        goal: goal,
-        competency: competency,
-        themes: theme,
+        data: {
+          title: title,
+          description: description,
+          language: language,
+          link: contentLink,
+          contentType: contentType,
+          domain: domain,
+          goal: goal,
+          competency: competency,
+          themes: theme,
+        }
       }
     )
     .then((res) => {
