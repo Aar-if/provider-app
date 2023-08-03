@@ -194,6 +194,9 @@ const TagContent = () => {
                     <option value="Cognitive Development">
                       Cognitive Development
                     </option>
+                    <option value="Physical Development">
+                      Physical Development
+                    </option>
                     <option value="Language and Literacy Development">
                       Language and Literacy Development
                     </option>
