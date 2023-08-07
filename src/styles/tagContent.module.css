@@ -1,4 +1,12 @@
+.headerDiv {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  width: 100%;
+}
+
 .outerdiv {
+  height: auto;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -94,4 +102,11 @@ textarea {
 }
 .formLabel {
   font-size: larger;
+}
+
+.myCourses {
+  background: none;
+  border: none;
+  text-decoration: underline;
+  color: blue;
 }

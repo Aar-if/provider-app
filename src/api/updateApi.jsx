@@ -2,23 +2,20 @@ import axios from "axios";
 import { create } from "../routes/links";
 const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
-const uploadApi = async (data, id) => {
-  console.log("Data in upload API");
-  console.log(data, "data", id);
-
-  const title = data.contentName;
+const updateApi = async (data, id) => {
+  const title = data.title;
   const language = data.language;
-  const theme = data.theme;
+  const theme = data.themes;
   const contentType = data.contentType;
-  const contentLink = data.contentLink;
+  const contentLink = data.link;
   const description = data.description;
-  const competency = data.compentencies;
-  const domain = data.contentDomain;
-  const goal = data.contentGoal;
+  const competency = data.competency;
+  const domain = data.domain;
+  const goal = data.goal;
 
-  let result = true;
+  let result;
   await axios
-    .post(`${baseUrl}/fln-contents`, {
+    .put(`${baseUrl}/fln-contents/` + id, {
       data: {
         title: title,
         description: description,
@@ -29,14 +26,9 @@ const uploadApi = async (data, id) => {
         goal: goal,
         competency: competency,
         themes: theme,
-        sourceOrganisation: "Tekdi",
-        user_id: id,
       },
     })
     .then((res) => {
-      console.log(res);
-      console.log(res.data);
-
       if (res.status === 200) {
         result = true;
       } else {
@@ -44,7 +36,7 @@ const uploadApi = async (data, id) => {
       }
     })
     .catch(function (error) {
-      console.log(error.response.data.error);
+      console.log(error?.response);
       let err = 0;
       return err;
     });
@@ -52,4 +44,4 @@ const uploadApi = async (data, id) => {
   return result;
 };
 
-export default uploadApi;
+export default updateApi;
