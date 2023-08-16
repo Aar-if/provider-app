@@ -10,6 +10,7 @@ import getDropdownValues from "../api/getApi";
 import Modal from "react-modal";
 import modalStyles from "../styles/modal.module.css";
 import { useForm } from "react-hook-form";
+import Footer from "../components/Footer";
 const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
 const customStyles = {
@@ -552,6 +553,9 @@ const MyCourses = () => {
           animateRows={true}
           rowSelection="multiple"
         />
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );

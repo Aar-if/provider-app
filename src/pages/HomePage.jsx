@@ -4,6 +4,7 @@ import headerStyles from "../styles/tagContent.module.css";
 import styles from "../styles/HomePage.module.css";
 import imagePath from "../assets/landing-image.png";
 import { useNavigate } from "react-router-dom";
+import Footer from "../components/Footer";
 
 function HomePage() {
   const userName = localStorage.getItem("userName");
@@ -41,6 +42,9 @@ function HomePage() {
         <div>
           {/* <img src={imagePath} style={{ width: "700px", height: "auto" }} /> */}
         </div>
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );

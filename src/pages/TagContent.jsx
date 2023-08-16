@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Footer from "../components/Footer";
 
 const TagContent = () => {
   const [success, setSuccess] = useState(false); //for re rendering/refresh after adding content successfully
@@ -330,6 +331,9 @@ const TagContent = () => {
             </div>
           </form>
         </div>
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );
