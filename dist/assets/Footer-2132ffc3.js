@@ -1,0 +1,1 @@
+import{j as o}from"./index-cdfedc27.js";const e="_footer_fhhiz_1",t={footer:e};function s(){return o.jsx("footer",{className:t.footer,children:o.jsx("p",{children:"Developed by Tekdi Technologies ❤ | Powered by onest.network"})})}export{s as F};
