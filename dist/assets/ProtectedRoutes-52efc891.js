@@ -1,0 +1,1 @@
+import{u as s,r as a,j as t}from"./index-cdfedc27.js";function c(o){const{Component:e}=o,n=s();return a.useEffect(()=>{localStorage.getItem("login")||n("/login")},[]),t.jsx("div",{children:t.jsx(e,{})})}export{c as default};
